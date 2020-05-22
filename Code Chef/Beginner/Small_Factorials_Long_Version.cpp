@@ -2,10 +2,14 @@
 
 using namespace std;
 
+    
 void multiply_two(int num1, int ar2[200]){
-    int arr1[200], arr2[200], arr3[200];
+	
+	
+int arr1[200], arr2[200], arr3[200];
     int prod_arr[200];
     int flag[200];
+    
 
     for(int i=0; i<200; i++){
         arr2[i] = ar2[i];
@@ -137,24 +141,24 @@ void multiply_two(int num1, int ar2[200]){
 
 int main(){
     
-    int num1, num2, arr1[200], arr2[200];
+    int num1, num2, arr[200];
     cin >> num1;
     num2 = num1;
     num1 = num1 - 1;
 
      for(int i=0; i<200; i++){
-        arr2[i] = -1;
+        arr[i] = -1;
     } 
 
     
     int indexvar = 199;
     int tempvar = num2;
     while(tempvar!=0){
-        arr2[indexvar] = tempvar%10;
+        arr[indexvar] = tempvar%10;
         tempvar = tempvar/10;
         indexvar--;
     }
 
-    multiply_two(num1, arr2);
+    multiply_two(num1, arr);
 
 }   
