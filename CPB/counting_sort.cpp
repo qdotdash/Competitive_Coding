@@ -86,3 +86,25 @@ int main(){
        cout << output[i] << " ";
     }
 }
+
+
+int memories;
+
+
+
+return memories;
+
+
+
+
+
+
+
+
+
+
+
+
+                                         
+
+                                         
