@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
   clock_t start, end;
-  long long int size = 1000000000;
+  long long int size = 100000000;
   //time1 = clock();
   start = clock();
 
