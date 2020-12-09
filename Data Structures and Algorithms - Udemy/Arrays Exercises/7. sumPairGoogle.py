@@ -1,7 +1,8 @@
 list1 = [1, 2, 5, 6, 9, 11, 17] #minsum = 1 + 2 = 3 and maxsum = 11 + 17  = 28
-sum1 = 15
+sum1 = 17
 length1 = len(list1)
 list2 = [1, 2, 64, 11, 1, 9, 32]
+length2 = len(list2)
 sum2 = 3
 
 #sorted
@@ -11,8 +12,6 @@ def loopingCombinations(list1): #O(1)
 			if(list1[i]+list1[j] == sum1):
 				return True
 	return False
-
-print(loopingCombinations(list1))
 
 
 def startFromEnds(list1): #O(n)
@@ -31,10 +30,10 @@ def startFromEnds(list1): #O(n)
 
 	return False
 
-print(startFromEnds(list1))
 
 
-def dictionaryIfUnordered(list2):
+
+def dictionaryIfUnordered(list2): #O(n)
 	mapOfList2 = {}
 	for x in list2:
 		if(x in mapOfList2):
@@ -44,4 +43,34 @@ def dictionaryIfUnordered(list2):
 
 	return False
 
-print(dictionaryIfUnordered(list2),end='')
+def binarySearchOrdered(list1): #binary search but with adding the mid and mid+1 to locate the given sum
+	first = 0
+	last = length1 - 1
+	mid  = int((first + last)/2)
+	print("sum1 = ", sum1)
+	while(first<=last):
+		tempSum = list1[mid] + list1[mid+1]
+		print("combination check : ", list1[mid], list1[mid+1])
+		if(tempSum == sum1):
+			return True
+		elif(tempSum > sum1):
+			last = mid - 1
+			mid = midCalculation(first, last)
+		else:
+			first = mid + 1
+			mid = midCalculation(first, last)
+	return False
+
+
+def midCalculation(first, last):
+	return int((first + last)/2)
+
+print(loopingCombinations(list1))
+
+print(startFromEnds(list1))
+
+print(dictionaryIfUnordered(list2))
+
+print("\n",list1,"\n")
+
+print(binarySearchOrdered(list1),end='')
