@@ -1,9 +1,9 @@
 # unordered - first recurring number - inputs - list, output - the recurring integer and undefined if no such integer exists
 
-list1 = [2,1,5,1,1]
+list1 = [1,0,1,4,5,6]
 
 
-def findFirstRecurringElement(list1):
+def findFirstRecurringElement(list1): #Naive Solution O(n^2)
 	length = len(list1)
 	indexOfReccurrence = length
 	FirstRecurringElement = None
@@ -22,4 +22,15 @@ def findFirstRecurringElement(list1):
 
 	return FirstRecurringElement
 
-print(findFirstRecurringElement(list1), end='')
+def findFirstRecurringElementHashMap(list1): # Using hash map O(n)
+	traversedOnes = {}
+	for elementInArray in list1:
+		if(traversedOnes.get(elementInArray)):
+			return elementInArray
+		else:
+			traversedOnes[elementInArray] = True
+
+	return None
+
+print(findFirstRecurringElement(list1))
+print(findFirstRecurringElementHashMap(list1), end='')

@@ -1,4 +1,6 @@
-list1 = [[]] * 10
-
-list1[7].append(4)
-print(list1)
+new = {}
+new["hello"] = "hai"
+if(new.get("hello")):
+	print(True)
+else:
+	print(False)
