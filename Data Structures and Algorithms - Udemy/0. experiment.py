@@ -1,9 +1,10 @@
-class Test:
-	def __init__(self):
-		self.run = True
+def fun():
+	return None
 
-obj1 = Test()
-obj2 = obj1
-obj2.run = False
-print('1', obj1.run)
-print('2', obj2.run)
+if(fun()==None):
+	print("-1")
+if(None):
+	print("0")
+if("sdfs"):
+	print("1")
+
